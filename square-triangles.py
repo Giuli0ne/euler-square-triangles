@@ -15,7 +15,7 @@ def findSolutions(per):
                 solList.append((i,j,k))
     return solList
 
-def countSolution(per,solutionList):
+def countSolution(solutionList):
     msg =  "{} soluzioni per {}"
     return len(solutionList)
     #print(msg.format(num,i))
@@ -26,6 +26,6 @@ def printSolution(solutionList):
         print(msg.format(el[0],el[1],el[2]))
 
 maxCount = 0
-for i in range(1,1000):
-    maxCount = max(maxCount,countSolution(i,findSolutions(i)))
-    print("Massimo numero di soluzioni: ",maxCount, end="\r")
+for i in range(1,1001):
+    maxCount = max(maxCount,countSolution(findSolutions(i)))
+    print("Massimo numero di soluzioni: ",maxCount, "(", i,")", end="\r")
